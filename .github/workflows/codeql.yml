@@ -1,11 +1,11 @@
-name: "CodeQL"
+name: "CodeQL Analysis"
 
 on:
   push:
-    branches: 
+    branches:
       - main
   pull_request:
-    branches: 
+    branches:
       - main
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up CodeQL
-        uses: github/codeql-action/setup@v2
+        uses: github/codeql-action/setup@v2 # Correct Action Setup
 
       - name: Initialize CodeQL database
         run: |
@@ -27,7 +27,7 @@ jobs:
       - name: Perform CodeQL analysis
         run: |
           codeql analyze codeql-db --format=sarif-latest --output=codeql-results.sarif
-          
+
       - name: Upload CodeQL results
         uses: github/codeql-action/upload-sarif@v1
         with:
