@@ -18,8 +18,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up CodeQL
-        uses: github/codeql-action/setup-codeql@v2  # Correct version
-
+        uses: github/codeql-action/setup@v2  # Correct action for CodeQL setup
 
       - name: Initialize CodeQL database
         run: |
